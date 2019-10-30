@@ -3,9 +3,11 @@ import {
     Text,
     View,
     StyleSheet,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 
+import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../assets/globals/colors';
 
 const UtilitiesScreen = props => {
@@ -13,39 +15,80 @@ const UtilitiesScreen = props => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                
+
                 {/* CONTAINERS */}
-                <View style={styles.utilityContainer}>
+
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
                     {/* CONTAINER ICON */}
                     <View style={styles.containerIconWrapper}>
-
+                        <Ionicons color={COLORS.primaryColor} name="ios-wine" size={125} />
                     </View>
 
                     {/* CONTAINER TEXT */}
                     <View style={styles.containerTitleWrapper}>
                         <Text style={styles.containerTitle}>Restaurants</Text>
                     </View>
-                </View>
+                </TouchableOpacity>
 
-                <View style={styles.utilityContainer}>
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
+                    {/* CONTAINER ICON */}
+                    <View style={styles.containerIconWrapper}>
+                        <Ionicons color={COLORS.primaryColor} name="ios-ribbon" size={125} />
+                    </View>
 
-                </View>
+                    {/* CONTAINER TEXT */}
+                    <View style={styles.containerTitleWrapper}>
+                        <Text style={styles.containerTitle}>Events</Text>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.utilityContainer}>
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
+                    {/* CONTAINER ICON */}
+                    <View style={styles.containerIconWrapper}>
+                        <Ionicons color={COLORS.primaryColor} name="ios-basket" size={125} />
+                    </View>
 
-                </View>
+                    {/* CONTAINER TEXT */}
+                    <View style={styles.containerTitleWrapper}>
+                        <Text style={styles.containerTitle}>Shopping</Text>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.utilityContainer}>
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
+                    {/* CONTAINER ICON */}
+                    <View style={styles.containerIconWrapper}>
+                        <Ionicons color={COLORS.primaryColor} name="ios-boat" size={125} />
+                    </View>
 
-                </View>
+                    {/* CONTAINER TEXT */}
+                    <View style={styles.containerTitleWrapper}>
+                        <Text style={styles.containerTitle}>Tours</Text>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.utilityContainer}>
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
+                    {/* CONTAINER ICON */}
+                    <View style={styles.containerIconWrapper}>
+                        <Ionicons color={COLORS.primaryColor} name="ios-cog" size={125} />
+                    </View>
 
-                </View>
+                    {/* CONTAINER TEXT */}
+                    <View style={styles.containerTitleWrapper}>
+                        <Text style={styles.containerTitle}>Technical</Text>
+                    </View>
+                </TouchableOpacity>
 
-                <View style={styles.utilityContainer}>
+                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails')}>
+                    {/* CONTAINER ICON */}
+                    <View style={styles.containerIconWrapper}>
+                        <Ionicons color={COLORS.primaryColor} name="ios-wifi" size={125} />
+                    </View>
 
-                </View>
+                    {/* CONTAINER TEXT */}
+                    <View style={styles.containerTitleWrapper}>
+                        <Text style={styles.containerTitle}>Wifi</Text>
+                    </View>
+                </TouchableOpacity>
 
 
             </View>
@@ -72,7 +115,7 @@ const styles = StyleSheet.create({
     utilityContainer: {
         height: 200,
         width: '48%',
-        backgroundColor: '#f7f7f7',
+        backgroundColor: 'white',
         borderRadius: 15,
         marginBottom: 20,
 
@@ -87,20 +130,22 @@ const styles = StyleSheet.create({
         elevation: 8,
     },
 
-    containerIconWrapper : {
-        height : '80%'
+    containerIconWrapper: {
+        height: '80%',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
-    containerTitleWrapper : {
-        padding : 10,
-        
+    containerTitleWrapper: {
+        padding: 10,
+
     },
 
-    containerTitle : {
-        textAlign : 'center',
-        fontSize : 15,
-        color : COLORS.darkTextColor,
-        fontFamily : 'Montserrat-Light'
+    containerTitle: {
+        textAlign: 'center',
+        fontSize: 21,
+        color: COLORS.darkTextColor,
+        fontFamily: 'Montserrat-Light'
     }
 
 })

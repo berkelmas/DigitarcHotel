@@ -5,6 +5,7 @@ import CreatedTabContainer from './navigators/Navigators';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
 
 
 const fetchFonts = () => {
@@ -14,7 +15,7 @@ const fetchFonts = () => {
     'Monteserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
     'Montserrat-Thin' : require('./assets/fonts/Montserrat-Thin.ttf')
   });
-}
+};
 
 export default App = () => {
   const [appLoaded, setAppLoaded] = React.useState(false);

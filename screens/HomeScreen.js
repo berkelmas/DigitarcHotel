@@ -16,7 +16,7 @@ const HomeScreen = props => {
                 <View style={styles.card}>
 
                     <View style={styles.cardHeader}>
-                        <Text style={{fontSize : 22, textAlign : 'center', color : '#37474f'}}>
+                        <Text style={{fontSize : 22, textAlign : 'center', color : '#37474f', fontFamily : 'Montserrat-Light'}}>
                             Welcome To DigitArc Hotel
                         </Text>
                     </View>
@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     cardBodyText : {
         color : '#37474f',
         fontSize : 18,
-        paddingVertical : 10
+        paddingVertical : 10,
+        fontFamily : 'Montserrat-Light'
     }
 })
 

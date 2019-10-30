@@ -27,7 +27,12 @@ const HomeStackNavigator = createStackNavigator({
         headerStyle: {
             backgroundColor: COLORS.primaryColor
         },
-        headerTintColor: COLORS.lightTextColor
+        headerTintColor: COLORS.lightTextColor,
+        headerTitleStyle: {
+            fontFamily : 'Montserrat-Light',
+            fontSize : 22,
+            fontWeight : '200'
+        }
     }
 });
 
@@ -38,7 +43,7 @@ const UtilitiesStackNavigator = createStackNavigator({
                 title : 'Events'
             }
         },
-        utilitiesDetails : {
+        UtilitiesDetails : {
             screen : UtilitiesDetailScreen
         }
     },
@@ -48,7 +53,12 @@ const UtilitiesStackNavigator = createStackNavigator({
             headerStyle : {
                 backgroundColor : COLORS.primaryColor,
             },
-            headerTintColor : COLORS.lightTextColor
+            headerTintColor : COLORS.lightTextColor,
+            headerTitleStyle: {
+                fontFamily : 'Montserrat-Light',
+                fontSize : 22,
+                fontWeight : '200'
+            }
         }
     }
     )
@@ -73,7 +83,7 @@ const TabNavigator = createBottomTabNavigator({
                 let iconName;
 
                 if (routeName === 'Home') {
-                    iconName = `ios-globe`;
+                    iconName = `ios-home`;
                 } else if ( routeName === 'Utilities') {
                     iconName = `ios-calendar`
                 }
