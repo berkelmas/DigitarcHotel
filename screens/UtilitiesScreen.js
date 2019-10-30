@@ -97,7 +97,7 @@ const UtilitiesScreen = props => {
 };
 
 UtilitiesScreen.navigationOptions = {
-
+    
 }
 
 const styles = StyleSheet.create({

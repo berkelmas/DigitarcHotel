@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 
 // REACT NAVIGATION
 import { createAppContainer } from 'react-navigation';
@@ -51,9 +52,9 @@ const UtilitiesStackNavigator = createStackNavigator({
         initialRouteName : 'Utilities',
         defaultNavigationOptions : {
             headerStyle : {
-                backgroundColor : COLORS.primaryColor,
+                backgroundColor : Platform.OS === 'ios' ? 'white' : COLORS.primaryColor,
             },
-            headerTintColor : COLORS.lightTextColor,
+            headerTintColor : Platform.OS === 'ios' ? COLORS.primaryColor : COLORS.lightTextColor,
             headerTitleStyle: {
                 fontFamily : 'Montserrat-Light',
                 fontSize : 22,
