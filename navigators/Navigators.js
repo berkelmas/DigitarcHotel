@@ -6,13 +6,15 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+
+
 // SCREENS
 import HomeScreen from '../screens/HomeScreen';
 import UtilitiesScreen from '../screens/UtilitiesScreen';
 import UtilitiesDetailScreen from '../screens/UtilitiesDetailsScreen';
 
 // ICONS
-import { Ionicons } from '@expo/vector-icons';
 import Icon from '../components/Icon';
 
 // GLOBAL VARIABLES
@@ -73,9 +75,9 @@ const UtilitiesStackNavigator = createStackNavigator({
             }
         }
     }
-    )
+)
 
-const TabNavigator = createBottomTabNavigator({
+const TabRoutes = {
     Home: {
         screen : HomeStackNavigator,
     },
@@ -85,24 +87,31 @@ const TabNavigator = createBottomTabNavigator({
             title  : 'Events'
         }
     },
-},
-    {
-        defaultNavigationOptions : ({navigation}) => ({
-            tabBarIcon : ({focused, horizontal, tintColor}) => {
-                const { routeName } = navigation.state;
-                let IconComponent = Icon;
+};
 
-                let iconName;
+const DefaultTabConf = {
+    defaultNavigationOptions : ({navigation}) => ({
+        tabBarIcon : ({focused, horizontal, tintColor}) => {
+            const { routeName } = navigation.state;
+            let IconComponent = Icon;
 
-                if (routeName === 'Home') {
-                    iconName = `home`;
-                } else if ( routeName === 'Utilities') {
-                    iconName = `calendar`
-                }
+            let iconName;
 
-                return <IconComponent name={iconName} size={30} color={tintColor} />
+            if (routeName === 'Home') {
+                iconName = `home`;
+            } else if ( routeName === 'Utilities') {
+                iconName = `calendar`
             }
-        }),
+
+            return <IconComponent name={iconName} size={30} color={tintColor} />
+        }
+    }),
+}
+
+const TabNavigator = createBottomTabNavigator(
+    TabRoutes,
+    {
+        ...DefaultTabConf,
         tabBarOptions: {
             activeTintColor: '#03a9f4',
             inactiveTintColor: 'gray',
@@ -113,4 +122,30 @@ const TabNavigator = createBottomTabNavigator({
     }
 );
 
-export default createAppContainer(TabNavigator);
+const MaterialTabNavigator = createMaterialBottomTabNavigator(
+    TabRoutes,
+    {
+        defaultNavigationOptions : ({navigation}) => ({
+            tabBarIcon : ({focused, horizontal, tintColor}) => {
+                const { routeName } = navigation.state;
+                let IconComponent = Icon;
+    
+                let iconName;
+    
+                if (routeName === 'Home') {
+                    iconName = `home`;
+                } else if ( routeName === 'Utilities') {
+                    iconName = `calendar`
+                }
+    
+                return <IconComponent name={iconName} size={26} color={tintColor} />
+            }
+        }),
+        activeColor : COLORS.primaryColor,
+        barStyle : {
+            backgroundColor : 'white'
+        }
+    }
+)
+
+export default createAppContainer(Platform.OS === 'android' ? MaterialTabNavigator : TabNavigator);

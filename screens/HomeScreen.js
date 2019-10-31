@@ -54,11 +54,11 @@ HomeScreen.navigationOptions = {
 const styles = StyleSheet.create({
     card: {
         backgroundColor : 'white',
-        height : Dimensions.get('window').height > 800 ? 285 : 270,
+        height : Dimensions.get('window').height > 800 ? 285 : 285,
         width : '80%',
         borderRadius : 20,
         opacity : 1,
-        marginTop : -Dimensions.get('window').height * 1 / 10,
+        marginTop : Dimensions.get('window').height > 800 ? -Dimensions.get('window').height * 1 / 10 : -Dimensions.get('window').height * 3 / 20,
         padding : 10,
         
         // SHADOW
