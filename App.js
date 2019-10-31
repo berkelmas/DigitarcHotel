@@ -5,15 +5,16 @@ import CreatedTabContainer from './navigators/Navigators';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-
 
 const fetchFonts = () => {
   return Font.loadAsync({
     'Montserrat': require('./assets/fonts/Montserrat-Black.ttf'),
     'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf'),
     'Monteserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-    'Montserrat-Thin' : require('./assets/fonts/Montserrat-Thin.ttf')
+    'Montserrat-Thin' : require('./assets/fonts/Montserrat-Thin.ttf'),
+
+    // FONT AWESOME ICOMOON FONT
+    'fontawesome-light' : require('./assets/fonts/icomoon.ttf')
   });
 };
 

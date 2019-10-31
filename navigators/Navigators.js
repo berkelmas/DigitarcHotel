@@ -13,6 +13,7 @@ import UtilitiesDetailScreen from '../screens/UtilitiesDetailsScreen';
 
 // ICONS
 import { Ionicons } from '@expo/vector-icons';
+import Icon from '../components/Icon';
 
 // GLOBAL VARIABLES
 import { COLORS } from '../assets/globals/colors';
@@ -89,14 +90,14 @@ const TabNavigator = createBottomTabNavigator({
         defaultNavigationOptions : ({navigation}) => ({
             tabBarIcon : ({focused, horizontal, tintColor}) => {
                 const { routeName } = navigation.state;
-                let IconComponent = Ionicons;
+                let IconComponent = Icon;
 
                 let iconName;
 
                 if (routeName === 'Home') {
-                    iconName = `ios-home`;
+                    iconName = `home`;
                 } else if ( routeName === 'Utilities') {
-                    iconName = `ios-calendar`
+                    iconName = `calendar`
                 }
 
                 return <IconComponent name={iconName} size={30} color={tintColor} />

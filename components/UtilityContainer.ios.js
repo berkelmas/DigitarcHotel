@@ -6,9 +6,10 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-
 import { COLORS } from '../assets/globals/colors';
+
+// FONT AWESOME ICONS
+import Icon from './Icon';
 
 const UtilityContainer = props => {
 
@@ -18,7 +19,7 @@ const UtilityContainer = props => {
             < TouchableOpacity style={{justifyContent : 'space-evenly'}} onPress={props.onPress.bind(this, props.link, props.title)}>
                 {/* CONTAINER ICON */ }
                 < View style={ styles.containerIconWrapper } >
-                    <Ionicons color={COLORS.primaryColor} name={props.icon} size={125} />
+                    <Icon color={COLORS.primaryColor} name={props.icon} size={125} />
                 </View >
 
                 {/* CONTAINER TEXT */ }

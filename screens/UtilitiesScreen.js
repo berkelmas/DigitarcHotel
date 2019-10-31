@@ -22,12 +22,12 @@ const UtilitiesScreen = props => {
         <ScrollView>
             <View style={styles.container}>
 
-                <UtilityContainer title="Restaurants" link="UtilitiesDetails" icon={'ios-wine'} onPress={onPress} />
-                <UtilityContainer title="Events" link="UtilitiesDetails" icon={'ios-ribbon'} onPress={onPress} />
-                <UtilityContainer title="Shopping" link="UtilitiesDetails" icon={'ios-basket'} onPress={onPress} />
-                <UtilityContainer title="Tours" link="UtilitiesDetails" icon={'ios-boat'} onPress={onPress} />
-                <UtilityContainer title="Technical" link="UtilitiesDetails" icon={'ios-cog'} onPress={onPress} />
-                <UtilityContainer title="Wifi" link="UtilitiesDetails" icon={'ios-wifi'} onPress={onPress} />
+                <UtilityContainer title="Restaurants" link="UtilitiesDetails" icon={'french-fries'} onPress={onPress} />
+                <UtilityContainer title="Events" link="UtilitiesDetails" icon={'calendar'} onPress={onPress} />
+                <UtilityContainer title="Shopping" link="UtilitiesDetails" icon={'shopping-bag'} onPress={onPress} />
+                <UtilityContainer title="Tours" link="UtilitiesDetails" icon={'directions'} onPress={onPress} />
+                <UtilityContainer title="Technical" link="UtilitiesDetails" icon={'tools'} onPress={onPress} />
+                <UtilityContainer title="Wifi" link="UtilitiesDetails" icon={'wifi'} onPress={onPress} />
 
             </View>
         </ScrollView>
