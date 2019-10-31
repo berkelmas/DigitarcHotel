@@ -10,86 +10,24 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../assets/globals/colors';
 
+import UtilityContainer from '../components/UtilityContainer';
+
 const UtilitiesScreen = props => {
+
+    const onPress = (link, title) => {
+        props.navigation.navigate(link, {title : title})
+    }
 
     return (
         <ScrollView>
             <View style={styles.container}>
 
-                {/* CONTAINERS */}
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title: 'Restaurants' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-wine" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Restaurants</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title : 'Events' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-ribbon" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Events</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title : 'Shopping' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-basket" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Shopping</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title : 'Tours' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-boat" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Tours</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title : 'Technical' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-cog" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Technical</Text>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.utilityContainer} onPress={() => props.navigation.navigate('UtilitiesDetails', { title : 'Wifi' })}>
-                    {/* CONTAINER ICON */}
-                    <View style={styles.containerIconWrapper}>
-                        <Ionicons color={COLORS.primaryColor} name="ios-wifi" size={125} />
-                    </View>
-
-                    {/* CONTAINER TEXT */}
-                    <View style={styles.containerTitleWrapper}>
-                        <Text style={styles.containerTitle}>Wifi</Text>
-                    </View>
-                </TouchableOpacity>
-
+                <UtilityContainer title="Restaurants" link="UtilitiesDetails" icon={'ios-wine'} onPress={onPress} />
+                <UtilityContainer title="Events" link="UtilitiesDetails" icon={'ios-ribbon'} onPress={onPress} />
+                <UtilityContainer title="Shopping" link="UtilitiesDetails" icon={'ios-basket'} onPress={onPress} />
+                <UtilityContainer title="Tours" link="UtilitiesDetails" icon={'ios-boat'} onPress={onPress} />
+                <UtilityContainer title="Technical" link="UtilitiesDetails" icon={'ios-cog'} onPress={onPress} />
+                <UtilityContainer title="Wifi" link="UtilitiesDetails" icon={'ios-wifi'} onPress={onPress} />
 
             </View>
         </ScrollView>

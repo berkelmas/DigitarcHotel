@@ -33,6 +33,11 @@ const HomeStackNavigator = createStackNavigator({
             fontFamily : 'Montserrat-Light',
             fontSize : 22,
             fontWeight : '200'
+        },
+        headerBackTitleStyle : {
+            fontFamily : 'Montserrat-Light',
+            fontSize : 18,
+            fontWeight : '200'
         }
     }
 });
@@ -58,6 +63,11 @@ const UtilitiesStackNavigator = createStackNavigator({
             headerTitleStyle: {
                 fontFamily : 'Montserrat-Light',
                 fontSize : 22,
+                fontWeight : '200'
+            },
+            headerBackTitleStyle : {
+                fontFamily : 'Montserrat-Light',
+                fontSize : 18,
                 fontWeight : '200'
             }
         }
@@ -94,7 +104,10 @@ const TabNavigator = createBottomTabNavigator({
         }),
         tabBarOptions: {
             activeTintColor: '#03a9f4',
-            inactiveTintColor: 'gray'
+            inactiveTintColor: 'gray',
+            labelStyle: {
+                fontFamily : 'Montserrat-Light'
+            }
         }
     }
 );
